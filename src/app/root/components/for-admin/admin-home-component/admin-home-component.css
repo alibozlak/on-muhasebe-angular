@@ -1,0 +1,30 @@
+.adminButtonSpace {
+    margin: 10px;
+}
+
+.text-align-center {
+    text-align: center;
+}
+
+.action-container {
+    display: flex;
+    justify-content: center;
+    margin: 24px 0; 
+}
+
+.massive-mobile-btn {
+    width: 90%; 
+    max-width: 400px; 
+    padding: 24px 16px !important;
+    font-size: 1.2rem !important; 
+    border-radius: 12px !important; 
+}
+
+.massive-mobile-btn mat-icon {
+    margin-right: 8px;
+    transform: scale(1.2);
+}
+
+h3 {
+    margin-left: 5px;
+}

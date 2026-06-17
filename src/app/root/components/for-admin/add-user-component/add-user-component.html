@@ -1,0 +1,59 @@
+
+<h2 style="text-align: center; margin-bottom: 24px; color: #1f2937; font-size: 1.5rem;">
+    Yeni Kullanıcı Kaydı
+</h2>
+
+<div class="add-user-container">
+    <form [formGroup]="createUserform" (ngSubmit)="create()">
+        
+        <div class="form-group">
+            <label for="username">Kullanıcı Adı : </label>
+            <input 
+                id="username" 
+                formControlName="username" 
+                type="text" 
+            >
+        </div>
+
+        <div class="form-group">
+            <label for="password">Şifre : </label>
+            <input 
+                id="password" 
+                formControlName="password" 
+                type="password" 
+            >
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email : </label>
+            <input 
+                id="email" 
+                formControlName="email" 
+                type="email" 
+            >
+        </div>
+
+        <div class="form-group" style="margin-bottom: 16px;">
+            <mat-slide-toggle formControlName="isActive" color="primary">
+                Kullanıcı Aktif mi?
+            </mat-slide-toggle>
+        </div>
+
+        <div class="form-group" style="margin-bottom: 16px;">
+            <mat-slide-toggle formControlName="isAdmin" color="warn">
+                Admin Yetkisi Ver
+            </mat-slide-toggle>
+        </div>
+
+        <div class="form-group">
+            <label for="extraInformation">Ekstra Bilgi (Opsiyonel) : </label>
+            <input 
+                id="extraInformation" 
+                formControlName="extraInformation" 
+                type="text" 
+            >
+        </div>
+
+        <button id="addUserButton" type="submit" [disabled]="createUserform.invalid">Kaydet</button>
+    </form>
+</div>
