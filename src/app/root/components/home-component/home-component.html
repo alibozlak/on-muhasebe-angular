@@ -1,1 +1,6 @@
-<p>home-component works!</p>
+
+@if (isUserAdmin) {
+    <app-admin-home-component/>
+} @else {
+    <app-user-home-component />
+}

@@ -37,7 +37,7 @@ export class LoginComponent {
 
         error : (e) => {
           localStorage.clear();
-          alert(e.error.getMessage());
+          alert(e.error);
           console.log(e);          
         }
       });

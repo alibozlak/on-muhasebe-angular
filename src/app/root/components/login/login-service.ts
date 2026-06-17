@@ -12,7 +12,7 @@ import { baseApiUrl } from '../../utils/project-constants';
 export class LoginService {
 
   private hhtpClient : HttpClient = inject(HttpClient);
-  private loginUrl = baseApiUrl + "/v1/login"
+  private loginUrl = baseApiUrl + "/login"
 
   public login(loginRequestDto : LoginRequestDto) : Observable<ResponseBodyWithObject<LoginResponseDto>> {
     return this.hhtpClient.post<ResponseBodyWithObject<LoginResponseDto>>(this.loginUrl, loginRequestDto);
