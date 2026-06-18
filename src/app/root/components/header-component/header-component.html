@@ -1,0 +1,27 @@
+<mat-toolbar color="primary" class="mat-elevation-z4">
+    <!-- Left Side: Application Title -->
+    <span>Ön Muhasebe</span>
+
+    <!-- Center: Flexible spacer to push the menu to the right -->
+    <span class="toolbar-spacer"></span>
+
+    <!-- Right Side: Trigger Button -->
+    <button mat-icon-button [matMenuTriggerFor]="userMenu" aria-label="User Menu">
+        <mat-icon>account_circle</mat-icon>
+    </button>
+
+    <!-- Hidden Dropdown Menu (Invisible until clicked) -->
+    <mat-menu #userMenu="matMenu" xPosition="before">
+        <button mat-menu-item (click)="goChangePasswordPage()">
+            <mat-icon>vpn_key</mat-icon>
+            <span>Şifre Değiştir</span>
+        </button>
+        
+        <mat-divider></mat-divider>
+        
+        <button mat-menu-item (click)="logout()">
+            <mat-icon color="warn">exit_to_app</mat-icon>
+            <span class="danger-text">Çıkış Yap</span>
+        </button>
+    </mat-menu>
+</mat-toolbar>

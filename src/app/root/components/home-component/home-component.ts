@@ -2,10 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { AdminHomeComponent } from "../for-admin/admin-home-component/admin-home-component";
 import { UserHomeComponent } from "../for-user/user-home-component/user-home-component";
 import { getAdminId } from '../../utils/for-jwt/jwt-parser';
+import { HeaderComponent } from "../header-component/header-component";
 
 @Component({
   selector: 'app-home-component',
-  imports: [AdminHomeComponent, UserHomeComponent],
+  imports: [AdminHomeComponent, UserHomeComponent, HeaderComponent],
   templateUrl: './home-component.html',
   styleUrl: './home-component.css',
 })
