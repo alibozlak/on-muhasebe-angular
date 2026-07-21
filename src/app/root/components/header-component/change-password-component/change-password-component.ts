@@ -1,6 +1,5 @@
 import { Component, inject } from '@angular/core';
-import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
-import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { FormBuilder, ReactiveFormsModule, Validators, FormGroupDirective } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 
 import { MatCardModule } from '@angular/material/card';
@@ -104,7 +103,7 @@ export class ChangePasswordComponent {
   //   }
   // }
 
-  public updatePassword() {
+  public updatePassword(formDirective : FormGroupDirective) {
     const changePasswordRequestDto : ChangePasswordRequestDto = {
       currentPassword : this.changePasswordForm.getRawValue().currentPassword!,
       newPassword : this.changePasswordForm.getRawValue().confirmPassword!
@@ -113,6 +112,8 @@ export class ChangePasswordComponent {
     this.httpClient.put<ResponseBody>(baseApiUrl + "/v1/users/change-password", changePasswordRequestDto).subscribe({
       next : (response) => {
         if (response.success){
+          formDirective.resetForm();
+
           this.changePasswordForm.reset();
           this.matSnackBar.open("Şifreniz değiştirildi..","Kapat", {duration : 2000});
         } else {
