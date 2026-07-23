@@ -1,0 +1,56 @@
+.toggle-row {
+  margin-bottom: 1rem;
+} 
+
+
+/* --- For Mobile ---- */
+
+.add-account-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; 
+    min-height: 100vh; 
+    padding: 16px 0; 
+    background-color: #ffffff;
+}
+
+.account-card {
+    width: 100%;
+    box-shadow: none !important; 
+    border-radius: 0 !important;
+    padding: 16px; 
+}
+
+.full-width {
+    width: 100%;
+    margin-bottom: 16px;
+}
+
+.strength-indicator-container {
+    margin-bottom: 24px;
+    padding: 0 4px;
+}
+
+.strength-text {
+    font-size: 12px;
+    color: #64748b;
+    display: block;
+    margin-top: 6px;
+}
+
+/* ---- For Desktop or Tablet ----  */
+
+@media (min-width: 600px) {
+    .change-password-container {
+        align-items: center; 
+        padding: 40px 24px;
+        background-color: #f8fafc; 
+    }
+
+    .password-card {
+        max-width: 450px; 
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05) !important; 
+        border-radius: 12px !important; 
+        padding: 40px 32px; 
+    }
+}

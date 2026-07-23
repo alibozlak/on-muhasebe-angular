@@ -1,0 +1,41 @@
+<div class="add-account-container">
+  <mat-card class="account-card">
+    <h2 style="text-align: center;">Hesap Ekle</h2>
+
+    <mat-card-content>
+      <form [formGroup]="addAccountForm" (ngSubmit)="createAccount(formDirective)" #formDirective="ngForm">
+        
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Hesap Adı</mat-label>
+          <input type = "text" 
+            matInput 
+            formControlName="accountName"
+            id="accountName"
+          />
+        </mat-form-field>
+
+        <div class="toggle-row">
+          <mat-slide-toggle formControlName="isCashAccount" id="isCashAccount">
+            Nakit Hesabı Mı?
+          </mat-slide-toggle>
+        </div>
+
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Hesaptaki Miktar</mat-label>
+          <input type="number" matInput formControlName="amount" id="amount" />
+        </mat-form-field>
+
+        <button 
+          mat-raised-button 
+          color="primary" 
+          type="submit" 
+          [disabled]="addAccountForm.invalid" 
+          class="full-width"
+        >
+          Hesap Ekle
+        </button>
+
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>
