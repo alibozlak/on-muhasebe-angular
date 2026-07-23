@@ -16,6 +16,15 @@
             <mat-icon>vpn_key</mat-icon>
             <span>Şifre Değiştir</span>
         </button>
+
+        @if (!isUserAdmin) {
+            <mat-divider></mat-divider>
+
+            <button mat-menu-item (click)="goAddAccountPage()">
+                <mat-icon>attach_money</mat-icon>
+                <span>Hesap Ekle</span>
+            </button>
+        }
         
         <mat-divider></mat-divider>
         

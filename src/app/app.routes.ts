@@ -5,6 +5,7 @@ import { HomeComponent } from './root/components/home-component/home-component';
 import { authGuard } from './root/utils/guards/auth.guard';
 import { AddUserComponent } from './root/components/for-admin/add-user-component/add-user-component';
 import { ChangePasswordComponent } from './root/components/header-component/change-password-component/change-password-component';
+import { AddAccountComponent } from './root/components/header-component/add-account-component/add-account-component';
 
 export const routes: Routes = [
     {path : 'login', component : LoginComponent, canActivate : [loginGuard]},
@@ -12,4 +13,5 @@ export const routes: Routes = [
     {path : '', redirectTo : 'home', pathMatch : 'full'},
     {path : "add-user", component : AddUserComponent, canActivate : [authGuard]},
     {path : "change-password", component : ChangePasswordComponent, canActivate : [authGuard]},
+    {path : "add-account", component : AddAccountComponent, canActivate : [authGuard]},
 ];
